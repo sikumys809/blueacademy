@@ -1,0 +1,264 @@
+/* ============================================================
+   Blue Academy — Components (Buttons, Breadcrumb, CTA Strip)
+   ============================================================ */
+
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+
+.btn-primary:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn-secondary:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.btn-line {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--border);
+}
+
+.btn-line:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-arrow::after {
+  content: "→";
+  font-family: var(--font-en);
+  font-weight: 700;
+  margin-left: 4px;
+  transition: transform var(--transition-fast);
+}
+
+.btn-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+.btn-sm { padding: 10px 20px; font-size: 12px; }
+.btn-lg { padding: 18px 36px; font-size: 15px; }
+
+/* ============ Breadcrumb ============ */
+.breadcrumb {
+  background: var(--soft-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "／";
+  color: var(--border);
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--blue);
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ============ CTA Strip ============ */
+.cta-strip {
+  background: var(--blue);
+  color: var(--white);
+  padding: 80px 0;
+}
+
+.cta-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+
+.cta-strip h2 {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.cta-strip-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cta-strip .btn-primary {
+  background: var(--white);
+  color: var(--blue);
+  border-color: var(--white);
+  padding: 18px 32px;
+  font-size: 14px;
+}
+
+.cta-strip .btn-primary:hover {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+
+.cta-strip .btn-line {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.4);
+  padding: 18px 32px;
+  font-size: 14px;
+}
+
+.cta-strip .btn-line:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+}
+
+/* ============ Section Headers ============ */
+.section-num-head {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 60px;
+  margin-bottom: 64px;
+  align-items: baseline;
+}
+
+.section-num {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.section-h2 {
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.section-h2 .blue {
+  color: var(--blue);
+}
+
+/* ============ Eyebrow Label ============ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--blue);
+}
+
+/* ============ Tags / Chips ============ */
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--soft-bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.tag-blue {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 1024px) {
+  .cta-strip-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .section-num-head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+}
