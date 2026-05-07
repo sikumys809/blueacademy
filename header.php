@@ -1,0 +1,72 @@
+<?php
+/**
+ * Header Template
+ *
+ * @package Blueacademy
+ */
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+
+<header class="site-header" role="banner">
+    <div class="container">
+        <div class="site-header-inner">
+
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo" aria-label="<?php bloginfo( 'name' ); ?>">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <path d="M9 9h7a4 4 0 0 1 0 8h-7zm0 8h8a4 4 0 0 1 0 8H9z" stroke="white" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span class="site-logo-text"><?php bloginfo( 'name' ); ?></span>
+            </a>
+
+            <nav class="primary-nav" role="navigation" aria-label="Primary">
+
+                <button class="menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false" aria-label="メニューを開く">
+                    <span class="menu-toggle-bar"></span>
+                </button>
+
+                <?php
+                if ( has_nav_menu( 'primary' ) ) {
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'primary',
+                            'menu_id'        => 'primary-menu',
+                            'menu_class'     => 'primary-nav-list',
+                            'container'      => false,
+                            'depth'          => 1,
+                            'fallback_cb'    => false,
+                        )
+                    );
+                } else {
+                    // メニュー未登録時のフォールバック
+                    ?>
+                    <ul id="primary-menu" class="primary-nav-list">
+                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/stories/' ) ); ?>">Stories</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/teachers/' ) ); ?>">Teachers</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/results/' ) ); ?>">Results</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">News</a></li>
+                    </ul>
+                    <?php
+                }
+                ?>
+
+                <a href="https://bit.ly/46QZuMS" class="btn btn-primary btn-sm primary-nav-cta" target="_blank" rel="noopener">無料受験相談</a>
+
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+<main id="content" class="site-main">
