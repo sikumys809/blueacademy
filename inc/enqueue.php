@@ -25,9 +25,8 @@ function blueacademy_enqueue_assets() {
     );
 
     // ============================================================
-    // CSS
+    // CSS — グローバル
     // ============================================================
-    // 1. base.css — design tokens / リセット / タイポ
     wp_enqueue_style(
         'blueacademy-base',
         BLUEACADEMY_THEME_URI . '/assets/css/base.css',
@@ -35,7 +34,6 @@ function blueacademy_enqueue_assets() {
         BLUEACADEMY_VERSION
     );
 
-    // 2. layout.css — header / footer / container
     wp_enqueue_style(
         'blueacademy-layout',
         BLUEACADEMY_THEME_URI . '/assets/css/layout.css',
@@ -43,7 +41,6 @@ function blueacademy_enqueue_assets() {
         BLUEACADEMY_VERSION
     );
 
-    // 3. components.css — btn / breadcrumb / cta-strip
     wp_enqueue_style(
         'blueacademy-components',
         BLUEACADEMY_THEME_URI . '/assets/css/components.css',
@@ -51,13 +48,33 @@ function blueacademy_enqueue_assets() {
         BLUEACADEMY_VERSION
     );
 
-    // 4. style.css (テーマヘッダー識別用、最後に読み込み)
     wp_enqueue_style(
         'blueacademy-style',
         get_stylesheet_uri(),
         array( 'blueacademy-base' ),
         BLUEACADEMY_VERSION
     );
+
+    // ============================================================
+    // CSS — ページ別（CPT判定で動的読み込み）
+    // ============================================================
+    if ( is_singular( 'story' ) ) {
+        wp_enqueue_style(
+            'blueacademy-page-story',
+            BLUEACADEMY_THEME_URI . '/assets/css/pages/story.css',
+            array( 'blueacademy-base' ),
+            BLUEACADEMY_VERSION
+        );
+    }
+
+    if ( is_singular( 'teacher' ) ) {
+        wp_enqueue_style(
+            'blueacademy-page-teacher',
+            BLUEACADEMY_THEME_URI . '/assets/css/pages/teacher.css',
+            array( 'blueacademy-base' ),
+            BLUEACADEMY_VERSION
+        );
+    }
 
     // ============================================================
     // JS
@@ -67,7 +84,7 @@ function blueacademy_enqueue_assets() {
         BLUEACADEMY_THEME_URI . '/assets/js/modal.js',
         array(),
         BLUEACADEMY_VERSION,
-        true // </body> 直前で読み込み
+        true
     );
 
     wp_enqueue_script(
