@@ -1,0 +1,185 @@
+/* ============================================================
+   Blue Academy — News (お知らせ個別ページ)
+   ============================================================ */
+
+/* ============ HERO ============ */
+.news-hero {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid var(--border);
+}
+
+.news-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.news-date {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--blue);
+}
+
+.news-cat {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 4px 12px;
+  background: var(--soft-bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+}
+
+.news-flag-important {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--blue);
+  padding: 4px 12px;
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+}
+
+.news-title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 900px;
+}
+
+/* ============ Body ============ */
+.news-body-section {
+  padding: 60px 0 100px;
+  border-bottom: 1px solid var(--border);
+}
+
+.news-body {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.95;
+  color: var(--ink);
+}
+
+.news-body h2 {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.news-body h3 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-top: 36px;
+  margin-bottom: 14px;
+  color: var(--blue);
+}
+
+.news-body p {
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.news-body strong {
+  font-weight: 700;
+}
+
+.news-body a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.news-body a:hover {
+  color: var(--blue-dark);
+}
+
+.news-body ul,
+.news-body ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.news-body ul {
+  list-style: disc;
+}
+
+.news-body ol {
+  list-style: decimal;
+}
+
+.news-body li {
+  margin-bottom: 8px;
+  line-height: 1.85;
+}
+
+.news-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 32px 0;
+}
+
+.news-body blockquote {
+  border-left: 3px solid var(--blue);
+  padding: 12px 24px;
+  margin: 32px 0;
+  background: var(--soft-bg);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.news-external {
+  max-width: 800px;
+  margin: 48px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+/* ============ Nav ============ */
+.news-nav {
+  padding: 60px 0;
+  background: var(--soft-bg);
+  text-align: center;
+}
+
+.news-nav-back {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 32px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--white);
+  transition: border var(--transition-fast), color var(--transition-fast);
+}
+
+.news-nav-back:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 640px) {
+  .news-hero { padding: 60px 0 40px; }
+  .news-body-section { padding: 40px 0 80px; }
+  .news-body h2 { font-size: 22px; margin-top: 36px; }
+  .news-body h3 { font-size: 18px; margin-top: 28px; }
+}

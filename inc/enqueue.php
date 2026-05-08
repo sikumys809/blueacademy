@@ -76,6 +76,15 @@ function blueacademy_enqueue_assets() {
         );
     }
 
+    if ( is_singular( 'news' ) ) {
+        wp_enqueue_style(
+            'blueacademy-page-news',
+            BLUEACADEMY_THEME_URI . '/assets/css/pages/news.css',
+            array( 'blueacademy-base' ),
+            BLUEACADEMY_VERSION
+        );
+    }
+
     // ============================================================
     // JS
     // ============================================================
