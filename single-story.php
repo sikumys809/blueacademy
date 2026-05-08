@@ -86,7 +86,7 @@ blueacademy_breadcrumb( array(
                     <div class="story-hero-name-en"><?php echo esc_html( $name_en ); ?></div>
                 <?php endif; ?>
                 <?php if ( $tagline_html ) : ?>
-                    <h2 class="story-hero-tagline"><?php echo wp_kses_post( $tagline_html ); ?></h2>
+                    <h2 class="story-hero-tagline"><?php echo wp_kses_post( html_entity_decode( html_entity_decode( $tagline_html, ENT_QUOTES | ENT_HTML5, 'UTF-8' ), ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ); ?></h2>
                 <?php endif; ?>
             </div>
             <?php if ( $photo_url ) : ?>
