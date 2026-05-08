@@ -20,6 +20,20 @@ function blueacademy_register_news_fields( $meta_boxes ) {
         'priority'   => 'default',
         'fields'     => array(
             array(
+                'name'        => '表示カテゴリ',
+                'id'          => 'display_category',
+                'type'        => 'select',
+                'options'     => array(
+                    'Notice' => 'Notice（お知らせ）',
+                    'Update' => 'Update（更新情報）',
+                    'Event'  => 'Event（イベント）',
+                    'Other'  => 'Other（その他）',
+                ),
+                'std'         => 'Notice',
+                'desc'        => 'TOPページや一覧で表示されるカテゴリラベル',
+                'placeholder' => 'カテゴリを選択',
+            ),
+            array(
                 'name' => '重要なお知らせ',
                 'id'   => 'is_important',
                 'type' => 'checkbox',

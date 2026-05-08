@@ -1,0 +1,535 @@
+/* ============================================================
+   Blue Academy — front-page.css (TOP only)
+   ============================================================
+   依存: base.css (CSS変数), layout.css (header/footer), components.css (btn)
+   読み込み: is_front_page() 時のみ
+   ============================================================ */
+
+/* TOP固有のレイアウト変数 */
+:root {
+  --pad-section: 160px;
+}
+
+@media (max-width: 968px) {
+  :root { --pad-section: 100px; }
+}
+
+@media (max-width: 600px) {
+  :root { --pad-section: 80px; }
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding: 100px 0 120px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 48px;
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.hero-meta::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--blue);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.hero-title {
+  font-family: var(--font-jp);
+  font-weight: 900;
+  font-size: clamp(64px, 8vw, 112px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.hero-title .accent {
+  color: var(--blue);
+}
+.hero-title .period {
+  color: var(--blue);
+}
+.hero-sub {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-top: 40px;
+  max-width: 520px;
+}
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  border-left: 1px solid var(--border);
+  padding-left: 40px;
+  padding-bottom: 12px;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-num {
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: clamp(56px, 6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--blue);
+  font-variant-numeric: tabular-nums;
+}
+.stat-num small {
+  font-size: 0.5em;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+.stat-desc {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.hero-actions {
+  margin-top: 64px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hero-actions .btn {
+  padding: 16px 28px;
+  font-size: 14px;
+}
+
+
+/* ============ SECTION COMMON ============ */
+.section {
+  padding: var(--pad-section) 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-head {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
+  align-items: start;
+}
+.section-eyebrow {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--blue);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow .num {
+  font-family: var(--font-en);
+  font-size: 11px;
+  color: var(--muted);
+}
+.section-title {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.section-lead {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-top: 24px;
+  max-width: 600px;
+}
+
+
+/* ============ INTRO STRIP ============ */
+.intro-strip {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--soft-bg);
+}
+.intro-text {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  max-width: 1000px;
+}
+.intro-text .blue { color: var(--blue); }
+
+
+/* ============ STUDENTS ============ */
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+.student-card {
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  transition: background 0.15s;
+}
+.student-card:hover { background: var(--soft-bg); }
+.student-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--soft-bg);
+  border-radius: 4px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.student-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  filter: saturate(0.9) contrast(1.03);
+  transition: filter 0.3s, transform 0.4s;
+}
+.student-card:hover .student-photo img {
+  filter: saturate(1) contrast(1.05);
+  transform: scale(1.02);
+}
+.student-num {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.student-uni {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.student-name {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.student-quote {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ink);
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+
+/* ============ CTA BIG ============ */
+.cta-section {
+  background: var(--navy);
+  color: var(--white);
+  padding: 140px 0;
+  border-bottom: none;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+.cta-eyebrow {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.cta-title {
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+  color: var(--white);
+  max-width: 900px;
+}
+.cta-title .blue { color: #4D94FF; }
+.cta-text {
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.9;
+  margin-bottom: 56px;
+  max-width: 640px;
+  font-weight: 500;
+}
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  margin-bottom: 64px;
+}
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.benefit-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 28px;
+  position: relative;
+}
+.benefit-img-wrap::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 22px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, transparent 70%);
+  filter: blur(8px);
+  z-index: 0;
+}
+.benefit-img-wrap img {
+  max-height: 100%;
+  width: auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.4));
+}
+.benefit-num {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 700;
+  color: #4D94FF;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.benefit-title {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.55;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+.benefit-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  max-width: 240px;
+}
+.cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn-cta-primary {
+  background: var(--blue);
+  color: var(--white);
+  padding: 18px 36px;
+  font-size: 14px;
+}
+.btn-cta-primary:hover { background: #1A75FF; }
+.btn-cta-line {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 18px 36px;
+  font-size: 14px;
+}
+.btn-cta-line:hover { border-color: var(--white); }
+
+
+/* ============ TEACHERS ============ */
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.teacher-card {
+  border-top: 2px solid var(--ink);
+  padding-top: 28px;
+}
+.teacher-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--soft-bg);
+  border-radius: 4px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.teacher-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.9) contrast(1.03);
+  transition: filter 0.3s, transform 0.4s;
+}
+.teacher-card:hover .teacher-photo img {
+  filter: saturate(1) contrast(1.05);
+  transform: scale(1.02);
+}
+.teacher-photo--tamura img { object-position: center 30%; }
+.teacher-photo--kanzaki img { object-position: center 30%; }
+.teacher-photo--mizuno img { object-position: center 30%; }
+.teacher-role {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.teacher-name {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.teacher-bio {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.teacher-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+
+/* ============ NEWS ============ */
+.news-list {
+  border-top: 1px solid var(--border);
+}
+.news-item {
+  display: grid;
+  grid-template-columns: 140px 120px 1fr auto;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.15s;
+}
+.news-item:hover { background: var(--soft-bg); margin: 0 -24px; padding-left: 24px; padding-right: 24px; }
+.news-date {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+.news-cat {
+  font-family: var(--font-en);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--blue);
+  text-transform: uppercase;
+  border: 1px solid var(--blue);
+  padding: 4px 10px;
+  border-radius: 2px;
+  text-align: center;
+}
+.news-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.news-arrow {
+  font-family: var(--font-en);
+  font-size: 16px;
+  color: var(--muted);
+}
+.news-more {
+  margin-top: 48px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+/* base.css の h/p の color 指定を上書き（CTAは紺色背景なので白にする） */
+.cta-section h2,
+.cta-section .cta-title { color: var(--white); }
+.cta-section .cta-text { color: rgba(255, 255, 255, 0.7); }
+.cta-section .benefit-title { color: var(--white); }
+.cta-section .benefit-desc { color: rgba(255, 255, 255, 0.6); }
+.cta-section .benefit-num { color: rgba(255, 255, 255, 0.5); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  :root { --pad-section: 100px; }
+  .container, .header-inner { padding: 0 24px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-stats { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 32px; flex-direction: row; gap: 48px; }
+  .section-head { grid-template-columns: 1fr; gap: 24px; }
+  .students-grid { grid-template-columns: repeat(2, 1fr); }
+  .teachers-grid { grid-template-columns: 1fr; }
+  .benefits { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-list { display: none; }
+}
+@media (max-width: 640px) {
+  :root { --pad-section: 80px; }
+  .hero { padding: 60px 0 80px; }
+  .hero-stats { flex-direction: column; gap: 24px; }
+  .students-grid { grid-template-columns: 1fr; }
+  .benefits { grid-template-columns: 1fr; }
+  .news-item { grid-template-columns: auto 1fr; gap: 12px; padding: 20px 0; }
+  .news-cat { display: none; }
+  .news-arrow { display: none; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .nav-cta .btn-line { display: none; }
+  .header-inner { height: 64px; }
+  .btn { padding: 10px 16px; font-size: 12px; }
+}
+

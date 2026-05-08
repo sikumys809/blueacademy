@@ -85,6 +85,15 @@ function blueacademy_enqueue_assets() {
         );
     }
 
+    if ( is_front_page() ) {
+        wp_enqueue_style(
+            'blueacademy-page-front',
+            BLUEACADEMY_THEME_URI . '/assets/css/pages/front-page.css',
+            array( 'blueacademy-base' ),
+            BLUEACADEMY_VERSION
+        );
+    }
+
     // ============================================================
     // JS
     // ============================================================
