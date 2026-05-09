@@ -40,3 +40,4 @@ require_once BLUEACADEMY_THEME_DIR . '/inc/post-types.php';
 require_once BLUEACADEMY_THEME_DIR . '/inc/meta-box-fields.php';
 require_once BLUEACADEMY_THEME_DIR . '/inc/enqueue.php';
 require_once BLUEACADEMY_THEME_DIR . '/inc/helpers.php';
+require_once BLUEACADEMY_THEME_DIR . '/inc/seo.php';
