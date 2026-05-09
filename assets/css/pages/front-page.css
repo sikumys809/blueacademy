@@ -533,3 +533,19 @@
   .btn { padding: 10px 16px; font-size: 12px; }
 }
 
+/* ============================================================
+   teacher-card を <a> 化したリンクスタイル整備
+   ============================================================ */
+a.teacher-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+a.teacher-card:hover {
+  transform: translateY(-4px);
+}
+a.teacher-card:hover .teacher-name {
+  color: var(--blue);
+}

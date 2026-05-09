@@ -22,11 +22,7 @@
         <div class="site-header-inner">
 
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo" aria-label="<?php bloginfo( 'name' ); ?>">
-                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect width="32" height="32" rx="6" fill="currentColor"/>
-                    <path d="M9 9h7a4 4 0 0 1 0 8h-7zm0 8h8a4 4 0 0 1 0 8H9z" stroke="white" stroke-width="2" stroke-linejoin="round" fill="none"/>
-                </svg>
-                <span class="site-logo-text"><?php bloginfo( 'name' ); ?></span>
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/blueacademy-logo.svg" alt="<?php bloginfo( 'name' ); ?>" class="site-logo-img">
             </a>
 
             <nav class="primary-nav" role="navigation" aria-label="Primary">

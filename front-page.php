@@ -198,35 +198,61 @@ get_header();
     </div>
 
     <div class="teachers-grid">
-      <article class="teacher-card">
-        <div class="teacher-photo teacher-photo--tamura">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/teacher-tamura.jpg' ); ?>" alt="塾長 田村江梨佳">
-        </div>
-        <div class="teacher-role">Director ／ 塾長</div>
-        <h3 class="teacher-name">田村 江梨佳</h3>
-        <p class="teacher-bio">学習院大学卒（体育会ゴルフ部）<br>成田国際空港 → スカイマーク → 起業</p>
-        <p class="teacher-desc">中学受験、指定校推薦での合格経験、起業家としての修羅場をくぐり抜けた経験を、すべて指導に注ぐ。</p>
-      </article>
+      <?php
+      $top_teachers = get_posts( array(
+          'post_type'      => 'teacher',
+          'post_status'    => 'publish',
+          'posts_per_page' => 3,
+          'meta_key'       => 'sort_order',
+          'orderby'        => 'meta_value_num',
+          'order'          => 'ASC',
+      ) );
+      foreach ( $top_teachers as $t ) :
+          $tid       = $t->ID;
+          $name_jp   = get_post_meta( $tid, 'name_jp', true );
+          $position  = get_post_meta( $tid, 'position', true );
+          $list_bio  = get_post_meta( $tid, 'list_bio_html', true );
+          $bio_html  = get_post_meta( $tid, 'bio_html', true );
+          $photo_id  = get_post_meta( $tid, 'photo', true );
+          $photo_src = $photo_id ? wp_get_attachment_image_url( $photo_id, 'large' ) : '';
 
-      <article class="teacher-card">
-        <div class="teacher-photo teacher-photo--kanzaki">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/teacher-kanzaki.jpg' ); ?>" alt="主任講師 神崎真桜">
-        </div>
-        <div class="teacher-role">Lead Instructor ／ 主任講師</div>
-        <h3 class="teacher-name">神崎 真桜</h3>
-        <p class="teacher-bio">立教大学卒<br>アクセンチュア株式会社</p>
-        <p class="teacher-desc">コンサルの現場で叩き込まれた「言語化」と「論理構成」の技術を、志望理由書に全投入。</p>
-      </article>
-
-      <article class="teacher-card">
-        <div class="teacher-photo teacher-photo--mizuno">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/teacher-mizuno.jpg' ); ?>" alt="講師 水野永吉">
-        </div>
-        <div class="teacher-role">Instructor ／ 講師</div>
-        <h3 class="teacher-name">水野 永吉</h3>
-        <p class="teacher-bio">慶應義塾大学卒（体育会ゴルフ部副主将）<br>慶應高校野球部出身</p>
-        <p class="teacher-desc">推薦入試で慶應を勝ち取った当事者であり、17年の経営経験を持つ実務家。</p>
-      </article>
+          // bio_html の最初の <p> 段落だけ取り出す（短い説明として）
+          $desc_raw = '';
+          if ( preg_match( '/<p>(.*?)<\/p>/s', $bio_html, $m ) ) {
+              $desc_raw = $m[1];
+          }
+          // strong だけ残してその他のタグは削る、長すぎたら100文字で省略
+          $desc = wp_kses( $desc_raw, array( 'strong' => array() ) );
+          // 長すぎたら短縮（句点の位置で切れるよう優先）
+          $desc_plain = wp_strip_all_tags( $desc );
+          if ( mb_strlen( $desc_plain ) > 90 ) {
+              $cut = mb_substr( $desc_plain, 0, 80 );
+              $last_period = mb_strrpos( $cut, '。' );
+              if ( $last_period !== false ) {
+                  $desc = mb_substr( $desc_plain, 0, $last_period + 1 );
+              } else {
+                  $desc = $cut . '…';
+              }
+          }
+      ?>
+        <a href="<?php echo esc_url( get_permalink( $tid ) ); ?>" class="teacher-card">
+          <div class="teacher-photo">
+            <?php if ( $photo_src ) : ?>
+              <img src="<?php echo esc_url( $photo_src ); ?>" alt="<?php echo esc_attr( $name_jp ); ?>">
+            <?php endif; ?>
+          </div>
+          <?php if ( $position ) : ?>
+            <div class="teacher-role"><?php echo esc_html( $position ); ?></div>
+          <?php endif; ?>
+          <h3 class="teacher-name"><?php echo esc_html( $name_jp ); ?></h3>
+          <?php if ( $list_bio ) : ?>
+            <p class="teacher-bio"><?php echo wp_kses_post( html_entity_decode( $list_bio ) ); ?></p>
+          <?php endif; ?>
+          <?php if ( $desc ) : ?>
+            <p class="teacher-desc"><?php echo wp_kses_post( $desc ); ?></p>
+          <?php endif; ?>
+        </a>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>

@@ -130,6 +130,16 @@ function blueacademy_enqueue_assets() {
         );
     }
 
+    if ( is_page_template( 'page-stories.php' ) ) {
+        wp_enqueue_style(
+            'blueacademy-page-stories',
+            BLUEACADEMY_THEME_URI . '/assets/css/pages/stories.css',
+            array( 'blueacademy-page-page' ),
+            BLUEACADEMY_VERSION
+        );
+    }
+
+
 
 
 
@@ -162,6 +172,17 @@ function blueacademy_enqueue_assets() {
             true
         );
     }
+
+    if ( is_page_template( 'page-stories.php' ) ) {
+        wp_enqueue_script(
+            'blueacademy-stories-video-modal',
+            BLUEACADEMY_THEME_URI . '/assets/js/stories-video-modal.js',
+            array(),
+            BLUEACADEMY_VERSION,
+            true
+        );
+    }
+
 
 }
 add_action( 'wp_enqueue_scripts', 'blueacademy_enqueue_assets' );

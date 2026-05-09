@@ -303,3 +303,26 @@
     gap: 32px;
   }
 }
+
+/* ============================================================
+   Site Logo Image (blueacademy-logo.svg)
+   ============================================================ */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+.site-logo-img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 100%;
+}
+/* フッターは暗背景なので、SVG を全白化して視認性を確保 */
+.site-footer .site-logo-img {
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+@media (max-width: 640px) {
+  .site-logo-img { height: 22px; }
+}

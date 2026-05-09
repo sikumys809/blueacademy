@@ -29,4 +29,5 @@ if ( blueacademy_metabox_active_check() ) {
     require_once BLUEACADEMY_THEME_DIR . '/inc/fields/page-about.php';
     require_once BLUEACADEMY_THEME_DIR . '/inc/fields/page-results.php';
     require_once BLUEACADEMY_THEME_DIR . '/inc/fields/page-teachers.php';
+    require_once BLUEACADEMY_THEME_DIR . '/inc/fields/page-stories.php';
 }
