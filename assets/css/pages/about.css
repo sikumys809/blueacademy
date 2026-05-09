@@ -1,0 +1,311 @@
+/* ============================================================
+   Blue Academy - about.css (About ページ専用)
+   ============================================================
+   依存: base.css, layout.css, components.css, page.css
+   読み込み: is_page_template('page-about.php') 時のみ
+   ヒーロー (.page-hero*) は page.css に既存のため、ここでは扱わない。
+   ============================================================ */
+
+/* ============ SECTION COMMON ============ */
+.section {
+  padding: var(--pad-section, 160px) 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-head {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
+  align-items: start;
+}
+.section-eyebrow {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--blue);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow .num {
+  font-family: var(--font-en);
+  font-size: 11px;
+  color: var(--muted);
+}
+.section-title {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.section-lead {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-top: 24px;
+  max-width: 600px;
+}
+
+/* ============ 3 PILLARS ============ */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+.pillar {
+  padding: 40px 32px 48px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.pillar-num {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
+}
+.pillar-title {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.pillar-text {
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+/* ============ DEFINITION SECTION ============ */
+.def-section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--border);
+}
+.def-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 100px;
+  align-items: start;
+}
+.def-label {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.def-jp-title {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.def-body p {
+  font-size: 16px;
+  line-height: 1.95;
+  color: var(--ink);
+  font-weight: 500;
+}
+.def-body p + p { margin-top: 24px; }
+.def-body p .blue { color: var(--blue); font-weight: 700; }
+
+/* ============ NUMBERS SECTION (DARK) ============ */
+.numbers-section {
+  padding: 120px 0;
+  background: var(--ink);
+  color: var(--white);
+  border-bottom: none;
+}
+.numbers-section .section-eyebrow { color: #4D94FF; }
+.numbers-section .section-eyebrow .num { color: rgba(255,255,255,0.4); }
+.numbers-section .section-title { color: var(--white); }
+.numbers-section .section-lead { color: rgba(255,255,255,0.6); }
+
+.big-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-left: 1px solid rgba(255,255,255,0.15);
+  margin-bottom: 80px;
+}
+.big-num-cell {
+  padding: 40px 28px 36px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.big-num-value {
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #4D94FF;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 16px;
+}
+.big-num-value small { font-size: 0.5em; font-weight: 700; margin-left: 4px; }
+.big-num-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.55;
+}
+
+/* ============ REASONS ============ */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.numbers-section .reasons-grid { color: var(--white); }
+.reason-card {
+  border-top: 2px solid var(--blue);
+  padding: 28px 4px 0;
+}
+.numbers-section .reason-card { border-top-color: #4D94FF; }
+.reason-num {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+}
+.numbers-section .reason-num { color: #4D94FF; }
+.reason-title {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.reason-text {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.numbers-section .reason-text { color: rgba(255,255,255,0.6); }
+
+/* ============ SPECIALISTS ============ */
+.specialists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+.specialist-card {
+  padding: 44px 32px 48px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.specialist-num {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.2em;
+  margin-bottom: 28px;
+}
+.specialist-title {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.45;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+.specialist-text {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* ============ CTA STRIP ============ */
+.cta-strip {
+  background: var(--blue);
+  color: var(--white);
+  padding: 80px 0;
+}
+.cta-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+.cta-strip h2 {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.cta-strip-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.cta-strip .btn-primary {
+  background: var(--white);
+  color: var(--blue);
+  padding: 18px 32px;
+  font-size: 14px;
+}
+.cta-strip .btn-primary:hover { background: var(--ink); color: var(--white); }
+.cta-strip .btn-line {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+  padding: 18px 32px;
+  font-size: 14px;
+}
+.cta-strip .btn-line:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .section-head { grid-template-columns: 1fr; gap: 24px; }
+  .pillars { grid-template-columns: 1fr; }
+  .def-grid { grid-template-columns: 1fr; gap: 32px; }
+  .big-numbers { grid-template-columns: repeat(2, 1fr); }
+  .reasons-grid { grid-template-columns: 1fr; }
+  .specialists-grid { grid-template-columns: 1fr; }
+  .cta-strip-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .big-numbers { grid-template-columns: 1fr; }
+}
+
+/* ============ HERO LAYOUT FIX (About) ============ */
+/* page.css の .page-hero-inner は grid 1.2fr/1fr。 */
+/* About では .page-hero-text-wrap を使うのでその挙動を明示。 */
+/* また .page-hero-visual の aspect-ratio:4/5 が画面幅依存で巨大化する */
+/* 問題を、右列内 max-width で抑制。 */
+.page-hero-inner > .page-hero-text-wrap {
+  min-width: 0;
+}
+.page-hero-inner > .page-hero-visual {
+  width: 100%;
+  max-width: 480px;
+  max-height: 600px;
+  margin-left: auto;
+  justify-self: end;
+  align-self: end;
+}
+@media (max-width: 1024px) {
+  .page-hero-inner > .page-hero-visual {
+    max-width: 100%;
+    max-height: 480px;
+    margin-left: 0;
+    justify-self: stretch;
+  }
+}
+@media (max-width: 640px) {
+  .page-hero-inner > .page-hero-visual {
+    max-height: 400px;
+  }
+}
