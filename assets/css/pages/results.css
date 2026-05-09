@@ -1,0 +1,72 @@
+/* ============================================================
+   Blue Academy - results.css (Results ページ専用)
+   ============================================================
+   依存: base.css, layout.css, components.css, page.css
+   読み込み: is_page_template('page-results.php') 時のみ
+   共通CSS（.section / .numbers-section / .reasons-grid / .cta-strip）は
+   components.css に定義済み。ここでは Results 固有のみ。
+   ============================================================ */
+
+/* ============ Universities List ============ */
+.uni-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.uni-cat {
+  border-top: 2px solid var(--ink);
+  padding-top: 32px;
+}
+.uni-cat-head {
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  align-items: baseline;
+}
+.uni-cat-num {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.2em;
+}
+.uni-cat-title {
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.uni-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-left: 232px;
+  padding: 0;
+}
+.uni-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.uni-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.uni-rate {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 1024px) {
+  .uni-cat-head { grid-template-columns: 1fr; gap: 8px; }
+  .uni-list { margin-left: 0; grid-template-columns: 1fr; }
+}

@@ -324,11 +324,15 @@
 
 .big-numbers {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0;
   border-top: 1px solid rgba(255,255,255,0.15);
   border-left: 1px solid rgba(255,255,255,0.15);
   margin-bottom: 80px;
+}
+/* テキスト型（数値以外、例: 「全国」）の値表示は小さめに */
+.big-num-value.is-text {
+  font-size: clamp(28px, 3vw, 40px);
 }
 .big-num-cell {
   padding: 40px 28px 36px;
@@ -391,9 +395,6 @@
 /* ============ Section Common Responsive ============ */
 @media (max-width: 1024px) {
   .section-head { grid-template-columns: 1fr; gap: 24px; }
-  .big-numbers { grid-template-columns: repeat(2, 1fr); }
   .reasons-grid { grid-template-columns: 1fr; }
 }
-@media (max-width: 640px) {
-  .big-numbers { grid-template-columns: 1fr; }
-}
+
