@@ -183,3 +183,111 @@
   .news-body h2 { font-size: 22px; margin-top: 36px; }
   .news-body h3 { font-size: 18px; margin-top: 28px; }
 }
+
+/* ============================================================
+   News List Full (page-news.php 用一覧表示)
+   ============================================================ */
+.news-list-full {
+  border-top: 1px solid var(--border);
+}
+.news-list-full .news-item {
+  display: grid;
+  grid-template-columns: 140px 120px 1fr auto;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+.news-list-full .news-item:hover {
+  background: var(--soft-bg);
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 -24px;
+}
+.news-list-full .news-date {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+.news-list-full .news-cat {
+  font-family: var(--font-en);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--blue);
+  text-transform: uppercase;
+  border: 1px solid var(--blue);
+  padding: 4px 10px;
+  border-radius: 2px;
+  text-align: center;
+}
+.news-list-full .news-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.news-list-full .news-arrow {
+  font-family: var(--font-en);
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ============ Pagination ============ */
+.pagination {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.pagination a,
+.pagination span {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  border-radius: 4px;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.pagination a:hover {
+  border-color: var(--ink);
+}
+.pagination .current {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+.pagination .nav {
+  width: auto;
+  padding: 0 16px;
+}
+
+/* ============ Empty State ============ */
+.empty-state {
+  padding: 80px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+@media (max-width: 640px) {
+  .news-list-full .news-item {
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    padding: 20px 0;
+  }
+  .news-list-full .news-cat,
+  .news-list-full .news-arrow { display: none; }
+}

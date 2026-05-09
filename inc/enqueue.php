@@ -76,7 +76,7 @@ function blueacademy_enqueue_assets() {
         );
     }
 
-    if ( is_singular( 'news' ) ) {
+    if ( is_singular( 'news' ) || is_page_template( 'page-news.php' ) ) {
         wp_enqueue_style(
             'blueacademy-page-news',
             BLUEACADEMY_THEME_URI . '/assets/css/pages/news.css',
@@ -120,6 +120,16 @@ function blueacademy_enqueue_assets() {
             BLUEACADEMY_VERSION
         );
     }
+
+    if ( is_page_template( 'page-teachers.php' ) ) {
+        wp_enqueue_style(
+            'blueacademy-page-teachers',
+            BLUEACADEMY_THEME_URI . '/assets/css/pages/teachers.css',
+            array( 'blueacademy-page-page' ),
+            BLUEACADEMY_VERSION
+        );
+    }
+
 
 
 

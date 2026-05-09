@@ -53,6 +53,13 @@ function blueacademy_register_teacher_fields( $meta_boxes ) {
                 'rows' => 3,
             ),
             array(
+                'name' => '一覧表示用 経歴サマリー（HTML可）',
+                'id'   => 'list_bio_html',
+                'type' => 'textarea',
+                'rows' => 3,
+                'desc' => '講師一覧ページ用の短い経歴。<br>で改行可。<br>例: 学習院大学経済学部（指定校推薦・体育会ゴルフ部）<br>成田国際空港株式会社 → スカイマーク株式会社',
+            ),
+            array(
                 'name' => 'プロフィール写真',
                 'id'   => 'photo',
                 'type' => 'single_image',
