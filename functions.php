@@ -42,3 +42,4 @@ require_once BLUEACADEMY_THEME_DIR . '/inc/enqueue.php';
 require_once BLUEACADEMY_THEME_DIR . '/inc/helpers.php';
 require_once BLUEACADEMY_THEME_DIR . '/inc/seo.php';
 require_once BLUEACADEMY_THEME_DIR . '/inc/json-ld.php';
+require_once BLUEACADEMY_THEME_DIR . '/inc/sitemap.php';
