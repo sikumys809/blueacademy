@@ -141,6 +141,18 @@ function blueacademy_enqueue_assets() {
         BLUEACADEMY_VERSION,
         true
     );
+
+    // page.php (特商法 / プライバシー等) で目次自動生成
+    if ( is_page() && ! is_front_page() && ! is_page_template() ) {
+        wp_enqueue_script(
+            'blueacademy-page-toc',
+            BLUEACADEMY_THEME_URI . '/assets/js/page-toc.js',
+            array(),
+            BLUEACADEMY_VERSION,
+            true
+        );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'blueacademy_enqueue_assets' );
 
