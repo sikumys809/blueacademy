@@ -76,7 +76,7 @@ function blueacademy_get_seo_ogp_image() {
     }
 
     // 4. サイトデフォルト
-    return get_template_directory_uri() . '/assets/images/blueacademy-logo.svg';
+    return home_url( '/wp-content/uploads/2026/05/blueacademy-scaled.jpeg' );
 }
 
 /**
