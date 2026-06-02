@@ -49,9 +49,9 @@ function blueacademy_breadcrumb( $items ) {
 function blueacademy_cta_strip(
     $title_html = 'あなたの物語も、<br>ここに加えませんか。',
     $primary_label = '無料受験相談',
-    $primary_url = 'https://bit.ly/46QZuMS',
+    $primary_url = 'https://bit.ly/4uMMSR9',
     $line_label = 'LINE追加',
-    $line_url = 'https://bit.ly/3OMit55'
+    $line_url = 'https://bit.ly/4uJsAYy'
 ) {
     ?>
     <section class="cta-strip">
