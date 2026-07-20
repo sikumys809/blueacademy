@@ -281,8 +281,8 @@ if ( $cta_strip_title ) :
         <div class="cta-strip-grid">
             <h2><?php echo wp_kses_post( html_entity_decode( $cta_strip_title ) ); ?></h2>
             <div class="cta-strip-actions">
-                <a href="https://bit.ly/4uMMSR9" class="btn btn-primary btn-arrow" target="_blank" rel="noopener">無料受験相談</a>
-                <a href="https://bit.ly/4uJsAYy" class="btn btn-line btn-arrow" target="_blank" rel="noopener">LINE追加</a>
+                <a href="https://utage-system.com/event/nLgsJEGf1Pff/register" class="btn btn-primary btn-arrow" target="_blank" rel="noopener">無料受験相談</a>
+                <a href="https://utage-system.com/line/open/6mWKcAJuw1Ke?mtid=07ij3JpYP7K4" class="btn btn-line btn-arrow" target="_blank" rel="noopener">LINE追加</a>
             </div>
         </div>
     </div>

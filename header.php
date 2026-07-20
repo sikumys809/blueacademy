@@ -57,7 +57,7 @@
                 }
                 ?>
 
-                <a href="https://bit.ly/4uMMSR9" class="btn btn-primary btn-sm primary-nav-cta" target="_blank" rel="noopener">無料受験相談</a>
+                <a href="https://utage-system.com/event/nLgsJEGf1Pff/register" class="btn btn-primary btn-sm primary-nav-cta" target="_blank" rel="noopener">無料受験相談</a>
 
             </nav>
 

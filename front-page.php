@@ -25,8 +25,8 @@ get_header();
           全国から本気の受験生が集まっています。
         </p>
         <div class="hero-actions">
-          <a href="https://bit.ly/4uMMSR9" class="btn btn-primary btn-arrow">無料受験相談を予約する</a>
-          <a href="https://bit.ly/4uJsAYy" class="btn btn-line btn-arrow">LINE追加で特典を受け取る</a>
+          <a href="https://utage-system.com/event/nLgsJEGf1Pff/register" class="btn btn-primary btn-arrow">無料受験相談を予約する</a>
+          <a href="https://utage-system.com/line/open/6mWKcAJuw1Ke?mtid=07ij3JpYP7K4" class="btn btn-line btn-arrow">LINE追加で特典を受け取る</a>
         </div>
       </div>
       <div class="hero-stats">
@@ -172,8 +172,8 @@ get_header();
     </div>
 
     <div class="cta-actions">
-      <a href="https://bit.ly/4uMMSR9" class="btn btn-cta-primary btn-arrow">無料受験相談を予約する</a>
-      <a href="https://bit.ly/4uJsAYy" class="btn btn-cta-line btn-arrow">LINE追加で特典を受け取る</a>
+      <a href="https://utage-system.com/event/nLgsJEGf1Pff/register" class="btn btn-cta-primary btn-arrow">無料受験相談を予約する</a>
+      <a href="https://utage-system.com/line/open/6mWKcAJuw1Ke?mtid=07ij3JpYP7K4" class="btn btn-cta-line btn-arrow">LINE追加で特典を受け取る</a>
     </div>
   </div>
 </section>

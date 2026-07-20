@@ -41,8 +41,8 @@
             <div class="site-footer-col">
                 <h4 class="site-footer-col-title">Contact</h4>
                 <div class="site-footer-cta">
-                    <a href="https://bit.ly/4uMMSR9" class="btn btn-primary" target="_blank" rel="noopener">無料受験相談</a>
-                    <a href="https://bit.ly/4uJsAYy" class="btn btn-line" target="_blank" rel="noopener">LINE追加</a>
+                    <a href="https://utage-system.com/event/nLgsJEGf1Pff/register" class="btn btn-primary" target="_blank" rel="noopener">無料受験相談</a>
+                    <a href="https://utage-system.com/line/open/6mWKcAJuw1Ke?mtid=07ij3JpYP7K4" class="btn btn-line" target="_blank" rel="noopener">LINE追加</a>
                 </div>
             </div>
 

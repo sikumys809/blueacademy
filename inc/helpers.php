@@ -49,9 +49,9 @@ function blueacademy_breadcrumb( $items ) {
 function blueacademy_cta_strip(
     $title_html = 'あなたの物語も、<br>ここに加えませんか。',
     $primary_label = '無料受験相談',
-    $primary_url = 'https://bit.ly/4uMMSR9',
+    $primary_url = 'https://utage-system.com/event/nLgsJEGf1Pff/register',
     $line_label = 'LINE追加',
-    $line_url = 'https://bit.ly/4uJsAYy'
+    $line_url = 'https://utage-system.com/line/open/6mWKcAJuw1Ke?mtid=07ij3JpYP7K4'
 ) {
     ?>
     <section class="cta-strip">
